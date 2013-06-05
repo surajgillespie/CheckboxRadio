@@ -13,6 +13,35 @@
       <button class="toolbutton pull-right" id="stop-button" title="Stop"></button>
     </div>
     <div id="canvas">
+      <div id="todo-app">
+        <ul id="todo-list">
+          <li data-id="1" class="completed">
+            <div class="view">
+              <input type="checkbox" checked>
+              <label>cook</label>
+              <button class="remove"></button>
+            </div>
+          </li>
+          <li data-id="2">
+            <div class="view">
+              <input type="checkbox">
+              <label>eat!</label>
+              <button class="remove"></button>
+            </div>
+          </li>
+          <li data-id="3">
+            <div class="view">
+              <input type="checkbox">
+              <label>update my TODO list</label>
+              <button class="remove"></button>
+            </div>
+          </li>
+        </ul>
+        <span class="icon-input" id="new-todo">
+          <input type="text" placeholder="What else needs to be done?" autofocus>
+          <button class="add right"></button>
+        </span>
+      </div>
     </div>
   </body>
 </html>
