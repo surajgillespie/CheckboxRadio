@@ -24,8 +24,9 @@ define(function (require) {
         var stopButton = document.getElementById("stop-button");
         stopButton.onclick = function () {
             var jsonData = JSON.stringify(todo.model.items);
-            activity.datastoreObject.setDataAsText(jsonData);
-            activity.datastoreObject.save(function () {
+            o = activity.getDatastoreObject();
+	    o.setDataAsText(jsonData);
+            o.save(function () {
                 activity.close();
             });
         };
