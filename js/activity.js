@@ -23,9 +23,11 @@ define(function (require) {
         // Make the activity stop with the stop button.
         var stopButton = document.getElementById("stop-button");
         stopButton.onclick = function () {
-            console.log(JSON.stringify(todo.model.items));
-            // FIXME call activity.close in datastore callback
-            activity.close();
+            var jsonData = JSON.stringify(todo.model.items);
+            activity.datastoreObject.setDataAsText(jsonData);
+            activity.datastoreObject.save(function () {
+                activity.close();
+            });
         };
 
         // Set up a brand new TODO list
