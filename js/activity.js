@@ -76,24 +76,6 @@ define(function (require) {
 
         });
 
-        todo.controller.loadItems([
-            {
-                id: 1,
-                title: "cook",
-                completed: 1
-            },
-            {
-                id: 2,
-                title: "eat!",
-                completed: 0
-            },
-            {
-                id: 3,
-                title: "finish my TODO list",
-                completed: 0
-            }
-        ]);
-
     });
 
 });

@@ -34,8 +34,8 @@ define(function (require) {
 
     controller.Controller.prototype.toggleComplete = function (id, checkbox) {
         var completed = checkbox.checked ? 1 : 0;
-        console.log(["toggle", id, completed]);
-//        this.model.update(id, {completed: "completed"});
+        this.model.update(id, {completed: completed});
+        this.loadItems(this.model.items);
     };
 
     return controller;

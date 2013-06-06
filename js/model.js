@@ -32,6 +32,16 @@ define(function (require) {
         }
     };
 
+    model.Model.prototype.update = function (id, updateData) {
+        for (var i = 0; i < this.items.length; i++) {
+            if (this.items[i].id == id) {
+                for (var x in updateData) {
+                    this.items[i][x] = updateData[x];
+                }
+            }
+        }
+    };
+
     return model;
 
 });
