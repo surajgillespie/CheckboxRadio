@@ -24,9 +24,9 @@ define(function (require) {
         var stopButton = document.getElementById("stop-button");
         stopButton.onclick = function () {
             var jsonData = JSON.stringify(todo.model.items);
-            o = activity.getDatastoreObject();
-	    o.setDataAsText(jsonData);
-            o.save(function () {
+            var datastoreObject = activity.getDatastoreObject();
+            datastoreObject.setDataAsText(jsonData);
+            datastoreObject.save(function () {
                 activity.close();
             });
         };
@@ -60,6 +60,7 @@ define(function (require) {
         });
 
         // Find the model ID of the clicked DOM element
+
         function lookupId(target) {
             var lookup = target;
 
