@@ -28,8 +28,8 @@ define(function (require) {
     };
 
     controller.Controller.prototype.removeItem = function (id) {
-        console.log(["remove", id]);
-//        this.model.remove(id);
+        this.model.remove(id);
+        this.loadItems(this.model.items);
     };
 
     controller.Controller.prototype.toggleComplete = function (id, checkbox) {

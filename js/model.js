@@ -23,6 +23,15 @@ define(function (require) {
         return newItem;
     };
 
+    model.Model.prototype.remove = function (id) {
+        for (var i = 0; i < this.items.length; i++) {
+            if (this.items[i].id == id) {
+                this.items.splice(i, 1);
+                break;
+            }
+        }
+    };
+
     return model;
 
 });
