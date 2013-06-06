@@ -61,16 +61,16 @@ button.remove {
   border-radius: 0;
 }
 
-#new-todo {
+#new-todo-span {
   width: 100%;
 }
 
-#new-todo input {
+#new-todo {
   text-align: left;
   width: calc(100% - 42px);
 }
 
-#new-todo, .edit {
+#new-todo-span, .edit {
   font-size: 24px;
 }
 
