@@ -1,6 +1,7 @@
 define(function (require) {
     var activity = require("sugar-web/activity/activity");
     var icon = require("sugar-web/graphics/icon");
+    var datastore = require("sugar-web/datastore");
     var model = require("activity/model");
     var view = require("activity/view");
     var controller = require("activity/controller");
