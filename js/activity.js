@@ -9,6 +9,8 @@ define(function (require) {
     // Manipulate the DOM only when it is ready.
     require(['domReady!'], function (doc) {
 
+        var todo;
+
         // Initialize the activity.
         activity.setup();
 
@@ -21,6 +23,8 @@ define(function (require) {
         // Make the activity stop with the stop button.
         var stopButton = document.getElementById("stop-button");
         stopButton.onclick = function () {
+            console.log(JSON.stringify(todo.model.items));
+            // FIXME call activity.close in datastore callback
             activity.close();
         };
 
@@ -32,7 +36,7 @@ define(function (require) {
             this.controller = new controller.Controller(this.model, this.view);
         }
 
-        var todo = new Todo();
+        todo = new Todo();
 
         var input = document.getElementById("new-todo");
         input.addEventListener('keypress', function (e) {
