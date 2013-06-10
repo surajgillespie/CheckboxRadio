@@ -40,6 +40,13 @@ define(function (require) {
         }
 
         todo = new Todo();
+	var datastoreObject = activity.getDatastoreObject();
+	function onLoaded(error, metadata, data) {
+            console.log(metadata);
+            console.log(data);
+	    todo.controller.loadItems(JSON.parse(data));
+        }
+	datastoreObject.loadAsText(onLoaded);
 
         var input = document.getElementById("new-todo");
         input.addEventListener('keypress', function (e) {
